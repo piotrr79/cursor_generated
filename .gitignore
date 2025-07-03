@@ -1,0 +1,35 @@
+.sonarlint
+.env
+*.pyo
+*.pyc
+__pycache__/
+__pytest_cache__/
+*.py[cod]
+.DS_Store
+**/.DS_Store
+*.log
+*.sqlite3
+env
+libs/*
+
+# PHP
+vendor/
+composer.lock
+*.phar
+
+# Apex
+*.cls-meta.xml
+*.trigger-meta.xml
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+*.iml
+*.log
+*.out
+*.project
+*.classpath
+*.settings/
+target/
