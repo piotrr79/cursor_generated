@@ -2,6 +2,24 @@
 
 This is a simple FastAPI app with a Hello World endpoint.
 
+## Setting up a Python virtual environment
+
+1. Create a virtual environment (recommended):
+   ```bash
+   python3 -m venv env
+   ```
+2. Activate the virtual environment:
+   - On macOS/Linux:
+     ```bash
+     source env/bin/activate
+     ```
+   - On Windows:
+     ```cmd
+     .\env\Scripts\activate
+     ```
+
+Then proceed with the steps below to install dependencies and run the app.
+
 ## How to run
 
 1. Install dependencies:
