@@ -1,0 +1,10 @@
+graph TD
+A[Frontend]--> B[Backend]
+B[Backend] --> C[Authentication]
+C[Authentication] --> B[Backend]
+B[Backend] --> A[Frontend]
+C --> E[(User DB)]
+
+style A fill:#f9f,stroke:#333,stroke-width:4px
+style B fill:#bbf,stroke:#333,stroke-width:2px
+style C fill:#bbf,stroke:#333,stroke-width:2px
