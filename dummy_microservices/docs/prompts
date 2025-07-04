@@ -1,0 +1,19 @@
+PROMPT: In dummy_microservices folder generate an app which displays current possiotion of International Space Station. This must be microservice apllication with backend api, frontend ui and custom authorisation provider. Microservices must communicate each other wiith RestApi. 
+For more quadiance use information located in dummy_microservices/docs folder
+RESPONSE: 
+- Analyzed docs/technical.md and docs/architecture.mermaid for requirements and architecture.
+- Decided on three microservices: backend (FastAPI), oauth (FastAPI), frontend (React/TypeScript).
+- Backend exposes /iss endpoint, protected by JWT, fetches ISS and geolocation info.
+- OAuth service handles registration, login, JWT issuing, and verification, using SQLite.
+- Frontend uses React, allows registration, login, and displays ISS position, using the provided template for UI.
+
+PROMPT: Proceed
+RESPONSE:
+- Scaffolded package.json and tsconfig.json for React frontend.
+- Created index.tsx and App.tsx for frontend entry and routing.
+- Implemented Login, Register, and ISSPosition React components for authentication and ISS display.
+- Provided instructions to copy UI template and run npm install/start.
+
+PROMPT: Sacae prompts and responses history for dummy_microservices app in dummy_microservices/docs/prompts
+RESPONSE:
+- Added this prompt/response history to dummy_microservices/docs/prompts for future reference.
