@@ -17,3 +17,25 @@ RESPONSE:
 PROMPT: Sacae prompts and responses history for dummy_microservices app in dummy_microservices/docs/prompts
 RESPONSE:
 - Added this prompt/response history to dummy_microservices/docs/prompts for future reference. 
+
+PROMPT: Refactor oauth app, apply OOP and SOLID, encapsulate it into classes and provide unit tests.
+Create also SqLite database for storing users deatail. Database should contain columns access_token and expiration date to store access token and its expiration date. Generate Python code to store them in database.
+Create Dockerfile with nginx vhost configuration and Readme.md file with app description and steps to set it up. Documentaiton should contain also steps to run application from Dcoker file.
+Provide unit tests.
+Update dummy_microservices/docs/prompts with prompt and responses
+RESPONSE:
+- Refactored the OAuth app into OOP/SOLID structure with Database, User, Token, UserService, and TokenService classes.
+- Added SQLite schema for users and tokens (with access_token and expiration date).
+- Implemented FastAPI endpoints using the new service classes.
+- Added unit tests for registration, authentication, token creation, and verification.
+- Created Dockerfile and nginx.conf for containerized deployment with Nginx reverse proxy.
+- Added README.md with setup, Docker, and testing instructions.
+- Updated dummy_microservices/docs/prompts with this prompt/response history. 
+
+PROMPT: Test the app and Update dummy_microservices/docs/prompts with prompt and responses
+RESPONSE:
+- Attempted to run unit tests for the OAuth app using pytest.
+- Encountered import errors due to relative imports; fixed by switching to absolute imports and setting PYTHONPATH.
+- Encountered missing dependency errors (e.g., passlib) due to an externally managed Python environment (PEP 668).
+- Suggested creating and activating a virtual environment to install dependencies and run tests.
+- Awaiting user decision on how to proceed with environment setup. 
