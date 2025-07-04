@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ISS Position Tracker (Symfony)</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2em; }
+        #result { margin-top: 1em; font-size: 1.2em; }
+        button { padding: 0.5em 1em; font-size: 1em; }
+    </style>
+</head>
+<body>
+    <h1>ISS Position Tracker (Symfony)</h1>
+    <button onclick="fetchISS()">Get Current ISS Position</button>
+    <div id="result"></div>
+    <script>
+        async function fetchISS() {
+            document.getElementById('result').textContent = 'Loading...';
+            try {
+                const response = await fetch('/iss');
+                if (!response.ok) throw new Error('API error');
+                const data = await response.json();
+                let locationText = '';
+                if (data.location_type === 'country') {
+                    locationText = `over <b>${data.location_name}</b>`;
+                } else if (data.location_type === 'sea') {
+                    locationText = `over the <b>${data.location_name}</b>`;
+                } else {
+                    locationText = 'over an unknown area';
+                }
+                document.getElementById('result').innerHTML =
+                    `Latitude: <b>${data.latitude}</b><br>Longitude: <b>${data.longitude}</b><br>The ISS is currently ${locationText}.`;
+            } catch (e) {
+                document.getElementById('result').textContent = 'Failed to fetch ISS position.';
+            }
+        }
+    </script>
+</body>
+</html> 
