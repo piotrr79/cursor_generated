@@ -1,7 +1,8 @@
 import pytest
 from datetime import datetime, timedelta
-from dummy_microservices.oauth.models import Database
-from dummy_microservices.oauth.services import UserService, TokenService
+from dummy_microservices.oauth.database import Database
+from dummy_microservices.oauth.user_service import UserService
+from dummy_microservices.oauth.token_service import TokenService
 
 @pytest.fixture
 def db():
@@ -34,6 +35,6 @@ def test_token_creation_and_verification(user_service, token_service):
     # Expired token
     # (simulate by creating a token with past expiration)
     from jose import jwt
-    from dummy_microservices.oauth.services import SECRET_KEY, ALGORITHM
+    from dummy_microservices.oauth.token_service import SECRET_KEY, ALGORITHM
     expired_token = jwt.encode({"sub": str(user_id), "exp": datetime.utcnow() - timedelta(minutes=1)}, SECRET_KEY, algorithm=ALGORITHM)
     assert token_service.verify_token(expired_token) is None 

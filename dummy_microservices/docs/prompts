@@ -47,3 +47,8 @@ RESPONSE:
 - Refactored main.py to use an OAuthApp class encapsulating the FastAPI app and services.
 - Updated all imports to reflect the new structure.
 - Noted that tests and other references may need updating to use the new import paths. 
+
+PROMPT: Update unit tests with changes
+RESPONSE:
+- Updated unit tests in test_services.py to import from the new split files (database.py, user_service.py, token_service.py) instead of the old models/services modules.
+- Tests are now compatible with the new OOP structure and ready to be run. 
