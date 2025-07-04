@@ -10,10 +10,20 @@ ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 60
 
 class TokenService:
+    """
+    Service for creating and verifying JWT access tokens.
+    """
     def __init__(self, db: Database):
+        """
+        Initialize with a Database instance.
+        """
         self.token_model = Token(db)
 
     def create_token(self, user_id: int) -> str:
+        """
+        Create a new JWT access token for a user and store it in the database.
+        Returns the access token string.
+        """
         expires_at = datetime.utcnow() + timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
         to_encode = {"sub": str(user_id), "exp": expires_at}
         access_token = jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
@@ -21,6 +31,10 @@ class TokenService:
         return access_token
 
     def verify_token(self, access_token: str) -> Optional[int]:
+        """
+        Verify a JWT access token and check its validity in the database.
+        Returns the user ID if valid, None otherwise.
+        """
         try:
             payload = jwt.decode(access_token, SECRET_KEY, algorithms=[ALGORITHM])
             user_id = int(payload.get("sub"))

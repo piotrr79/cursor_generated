@@ -3,6 +3,7 @@
 # Code generation with Curson failed. Despite instructions in /docs folder and defined rules following thigs failed:
 - **OOP / SOLID** - Cursor ignored guaidance and generated flat code, not encapsulated in classes. Wen asked for refactoring created nested classes in one file and ignored some other files from refactoring. When asked for splitting files did not executed prompt correctly (while several request was merged into one prompt).
 - **Type hints** - Missing type hints in Python code, even thus it was defined as requirement in /docs
+- **Docs** - Missing Docs in Python code, even thus it was defined as requirement in /docs
 - **Ignored files** - For fronted attached template file was ingored, React app was created without css styles and core html. Attached template was considered as final React template (not example) and was not attached to fronted app. Public folder is missing.
 
 ## Conclusion: while it works well with simpler pices of code (like the one in /dummy_fast_api) too complex and too extended prompts might be to complicated to handle correctly and without human participation. 

@@ -40,15 +40,15 @@ RESPONSE:
 - Suggested creating and activating a virtual environment to install dependencies and run tests.
 - Awaiting user decision on how to proceed with environment setup. 
 
-PROMPT: In oauth app split UserService and TokenSerivce classes from services.py into 2 diffrerent files, one for each class. Do the same with Token, Database and User classes in models.py. Refactor main.py to OOP, use classes.
+PROMPT: In oauth app split UserService and TokenSerivce classes from services.py into 2 diffrerent files, one for each class. Do the same with Token, Database and User classes in models.py. Refactor main.py to OOP, use classes. Cleanup models.py
 RESPONSE:
-- Split UserService and TokenService into user_service.py and token_service.py.
-- Split Database, User, and Token into database.py, user.py, and token.py.
-- Refactored main.py to use an OAuthApp class encapsulating the FastAPI app and services.
-- Updated all imports to reflect the new structure.
-- Noted that tests and other references may need updating to use the new import paths. 
+- UserService and TokenService were already split into user_service.py and token_service.py.
+- Database, User, and Token were already split into database.py, user.py, and token.py.
+- main.py was already refactored to use an OAuthApp class encapsulating the FastAPI app and services.
+- models.py was empty and has now been deleted for cleanup.
+- The OAuth app is now fully modular and OOP-structured, with each class in its own file and the main app encapsulated in a class. 
 
-PROMPT: Update unit tests with changes
+PROMPT: Provide docstrings for oath app
 RESPONSE:
-- Updated unit tests in test_services.py to import from the new split files (database.py, user_service.py, token_service.py) instead of the old models/services modules.
-- Tests are now compatible with the new OOP structure and ready to be run. 
+- Added descriptive docstrings to all core classes and methods in the OAuth app, including Database, User, Token, UserService, TokenService, and the OAuthApp class in main.py.
+- Docstrings explain the purpose and usage of each class and method for easier maintenance and understanding. 
