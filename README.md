@@ -20,7 +20,7 @@ In another two tests Cursor was prompted to generate the same apllication from t
 
 There supposed to be three microservices, forntend in React, backend in Python FastApi and Authorisation app in Python Django. Project folder are `dummy_microservices` and `dummy_microservices_v2`
 
-First test `dummy_microservices` failed. Scond test `dummy_microservices_v2` with improved guidance and more detailed prompts passed. Prompts logs can be checked in `dummy_microservices/docs/prompts` and `dummy_microservices_v2/docs/prompts`
+First test `dummy_microservices` failed. Scond test `dummy_microservices_v2` with improved guidance and more detailed prompts passed. Prompts logs can be checked in `dummy_microservices/docs/prompts` and `dummy_microservices_v2/docs/prompts`.
 
 ## Contents
 
