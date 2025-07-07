@@ -1,0 +1,62 @@
+# Project Context and Architecture
+SYSTEM_CONTEXT: |
+  You are a senior developer working on a Python / ReactJs project.
+  Required file reads on startup:
+  - docs/architecture.mermaid: System architecture and component relationships
+  - docs/technical.md: Technical specifications and patterns
+  - docs/prompts: Every prompt that is used to generate code to be stored here as text
+
+  Before making any changes:
+  1. Parse and understand system architecture from docs/architecture.mermaid
+  2. Follow technical specifications from docs/technical.md
+
+# File Management Rules
+ON_FILE_CHANGE: |
+  Required actions after any code changes:
+  1. READ docs/architecture.mermaid to verify architectural compliance
+  2. VALIDATE changes against docs/technical.md specifications
+
+# Code Style and Patterns
+TYPESCRIPT_GUIDELINES: |
+  - Use strict typing, avoid 'any'
+  - Follow SOLID principles
+  - Write unit tests for all public methods
+  - Document with JSDoc
+
+# Code Style and Patterns
+PYTHON_GUIDELINES: |
+  - Follow SOLID principles
+  - Follow Object Oriented Programming principles
+  - Avoid functional, declarative programming; use classes where possible
+  - Use descriptive variable names with auxiliary verbs
+  - Use def for pure functions and async def for asynchronous operations
+  - Write unit tests for all methods
+  - Document with Python docstrings
+  - Handle errors and edge cases at the beginning of functions
+  - Use early returns for error conditions to avoid deeply nested if statements
+  - Use type hints for all functions and methods
+  - Use type hints for all variables
+  - Use type hints for all class attributes
+  - Use type hints for all function parameters
+  - Use type hints for all return values
+  - Use type hints for all class methods
+  - Use type hints for all class attributes
+  - Use type hints for all function parameters
+
+# Architecture Understanding
+READ_ARCHITECTURE: |
+  File: docs/architecture.mermaid
+  Required parsing:
+  1. Load and parse complete Mermaid diagram
+  2. Extract and understand:
+     - Module boundaries and relationships
+     - Data flow patterns
+     - System interfaces
+     - Component dependencies
+  3. Validate any changes against architectural constraints
+  4. Ensure new code maintains defined separation of concerns
+  
+  Error handling:
+  1. If file not found: STOP and notify user
+  2. If diagram parse fails: REQUEST clarification
+  3. If architectural violation detected: WARN user
