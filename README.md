@@ -35,7 +35,7 @@ This repository contains multiple dummy projects, each demonstrating a different
 - **dummy_php**: ISS tracker in PHP. [See README](dummy_php/Readme.md)
 - **dummy_java**: ISS tracker in Java/Spring. [See README](dummy_java/Readme.md)
 
-For architecture, prompts, and technical details, see the `dummy_microservices_v2/docs/` and `dummy_microservices/docs/` folders.
+For architecture, prompts, and technical details, see the `dummy_microservices/docs/` and `dummy_microservices_v2/docs/` folders.
 
 # Conclusions:
 - **While Cursor is very good in generating smaller chunks of code it not so efficient in complex apllication generation (like `dummy_microservices`, `dummy_microservices_v2`).**

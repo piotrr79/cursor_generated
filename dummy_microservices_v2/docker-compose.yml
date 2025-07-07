@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+    container_name: iss-backend
+    ports:
+      - "8000:80"
+    depends_on:
+      - auth
+    networks:
+      - iss-net
+
+  auth:
+    build:
+      context: ./auth
+    container_name: iss-auth
+    ports:
+      - "8001:80"
+    networks:
+      - iss-net
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: iss-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+      - auth
+    networks:
+      - iss-net
+
+networks:
+  iss-net:
+    driver: bridge 
