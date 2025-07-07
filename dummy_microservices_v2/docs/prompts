@@ -1,6 +1,6 @@
 PROMPT: In dummy_microservices_v2 folder generate an app which displays current possiotion of International Space Station. This must be microservice apllication with backend api, frontend ui and custom authorisation provider. Microservices must communicate each other wiith RestApi. 
 Backend api must be generated with FastApi, authorisation provider must be generated with Django framework, frontend app must be generated with React. All generated code must follow OOP and SOLID standards. Unit tests must be generated. Docker files with ngingx vhosts must gen created for every application. 
-For more quadiance use information located in dummy_microservices/docs folder
+For more quadiance use information located in dummy_microservices2/docs folder
 RESPONSE:
 - Outlined project structure: backend (FastAPI), auth (Django), frontend (React), docs.
 - Scaffolded directories and initialized virtual environments and dependencies for each service.
@@ -97,3 +97,20 @@ PROMPT: Calculate how many prompts has been used for generating app in dymmy_mic
 RESPONSE:
 - Counted each PROMPT entry in docs/prompts related to dummy_microservices_v2.
 - Total prompts used for generating the app in dummy_microservices_v2: 22
+
+PROMPT: Provide clas and menthods documentation for auth
+RESPONSE:
+- Summarized class and method docstrings for UserManager, User, RegisterSerializer, LoginSerializer, RegisterView, LoginView, and UserAuthTests, as found in the codebase.
+
+PROMPT: Generate admin for auth
+RESPONSE:
+- Registered the custom User model in Django admin with a custom UserAdmin for email-based login and management.
+
+PROMPT: Log all current prompts and responses to docs/prompts
+RESPONSE:
+- Appended all session prompts and responses to this file for traceability and reproducibility.
+
+PROMPT: Calculate how many prompts has been perfomerd and update Log it to docs/prompts
+RESPONSE:
+- Counted the number of PROMPT entries in docs/prompts.
+- Total prompts performed for dummy_microservices_v2 so far: 32
