@@ -1,0 +1,99 @@
+PROMPT: In dummy_microservices_v2 folder generate an app which displays current possiotion of International Space Station. This must be microservice apllication with backend api, frontend ui and custom authorisation provider. Microservices must communicate each other wiith RestApi. 
+Backend api must be generated with FastApi, authorisation provider must be generated with Django framework, frontend app must be generated with React. All generated code must follow OOP and SOLID standards. Unit tests must be generated. Docker files with ngingx vhosts must gen created for every application. 
+For more quadiance use information located in dummy_microservices/docs folder
+RESPONSE:
+- Outlined project structure: backend (FastAPI), auth (Django), frontend (React), docs.
+- Scaffolded directories and initialized virtual environments and dependencies for each service.
+- Initialized Django project and app for auth service, configured DRF and SimpleJWT, created custom OOP/SOLID user model and manager, registered in settings.
+- Added OOP/SOLID serializers, views, and URLs for registration and login.
+- Ran migrations, created superuser, and added unit tests for registration and login (all tests passed).
+- Added Dockerfile and Nginx vhost config for Django auth service.
+
+PROMPT: Proceed with backend service
+RESPONSE:
+- Will implement OOP/SOLID FastAPI backend with `/iss` endpoint, JWT auth (verifying with Django auth), unit tests, Dockerfile, and Nginx config next.
+
+PROMPT: Proceed
+RESPONSE:
+- Implemented OOP/SOLID FastAPI backend with `/iss` endpoint, JWT auth (verifying with Django auth), and service integration.
+- Added unit tests for `/iss` endpoint (mocking AuthService and ISSService), all tests passing.
+
+PROMPT: Proceed
+RESPONSE:
+- Checked for ISSService unit tests, found none, and added comprehensive tests (mocking external APIs and error handling). All tests passing.
+
+PROMPT: Proceed
+RESPONSE:
+- Created backend README with architecture, endpoints, authentication, running/testing instructions, and OOP/SOLID compliance notes.
+
+PROMPT: Porceed with backend Docker/Nginx setup
+RESPONSE:
+- Added production-ready Dockerfile for FastAPI + Nginx, Nginx config, and start.sh script. Made start.sh executable.
+
+PROMPT: Porceed to backend lgging improvmenets
+RESPONSE:
+- Added structured logging to ISSService, AuthService, and controller. Configured global logging. All new log code documented with docstrings.
+
+PROMPT: Log all current prompts and responses to docs/prompts
+RESPONSE:
+- Appended all session prompts and responses to this file for traceability and reproducibility.
+
+PROMPT: Next microservice
+RESPONSE:
+- Determined frontend React app was already scaffolded; created components directory for modular OOP/SOLID code.
+
+PROMPT: Scaffold the frontend React app and directory structure
+RESPONSE:
+- Confirmed React app structure exists with src, public, and main files. Ensured components directory is present for modularity.
+
+PROMPT: Proceed
+RESPONSE:
+- Added OOP/SOLID AuthService class for registration, login, logout, and JWT storage.
+
+PROMPT: Proceed
+RESPONSE:
+- Implemented Register component using AuthService, with form, error handling, and documentation.
+
+PROMPT: Proceed
+RESPONSE:
+- Implemented Login component using AuthService, with form, error handling, and documentation.
+
+PROMPT: Proceed
+RESPONSE:
+- Added OOP/SOLID ISSService class for fetching ISS position from backend with JWT auth.
+
+PROMPT: Proceed
+RESPONSE:
+- Implemented ISSPosition component to display ISS position and geolocation, using ISSService and AuthService.
+
+PROMPT: Proceed
+RESPONSE:
+- Set up routing and protected routes in App.tsx. Integrated authentication state and navigation. Used OOP/SOLID principles.
+- Installed react-router-dom and types.
+
+PROMPT: Proceed
+RESPONSE:
+- Added unit tests for ISSService (Jest, fetch mocked).
+
+PROMPT: Proceed
+RESPONSE:
+- Added unit tests for AuthService (Jest, fetch and localStorage mocked).
+
+PROMPT: Proceed
+RESPONSE:
+- Added unit tests for Register component (React Testing Library, AuthService mocked, best practices for async queries).
+
+PROMPT: Add unit tests for the Login or ISSPosition components, Style the frontend for improved UX, Integrate the frontend with backend/auth microservices (proxy, Docker, etc.)
+RESPONSE:
+- Added unit tests for Login and ISSPosition components (React Testing Library, AuthService/ISSService mocked).
+- Improved frontend styling in App.css for layout, forms, navigation, and messages.
+- Added Dockerfile and Nginx config for frontend: static file serving, API proxying to backend/auth microservices.
+
+PROMPT: Log all current prompts and responses to docs/prompts
+RESPONSE:
+- Appended all session prompts and responses to this file for traceability and reproducibility.
+
+PROMPT: Calculate how many prompts has been used for generating app in dymmy_microservices_v2
+RESPONSE:
+- Counted each PROMPT entry in docs/prompts related to dummy_microservices_v2.
+- Total prompts used for generating the app in dummy_microservices_v2: 22
