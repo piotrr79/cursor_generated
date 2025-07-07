@@ -1,3 +1,5 @@
+**Note:** This codebase was generated with [Cursor](https://www.cursor.so/).
+
 # Dummy PHP ISS API (PHP + Nginx)
 
 This project is a PHP application that exposes a simple API:

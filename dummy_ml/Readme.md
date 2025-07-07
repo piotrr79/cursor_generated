@@ -1,3 +1,5 @@
+**Note:** This codebase was generated with [Cursor](https://www.cursor.so/).
+
 # Dummy ML PII Detection Model
 
 This project provides a basic machine learning model to analyze text data for the presence of personal details (PII), such as:

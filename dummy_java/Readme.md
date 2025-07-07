@@ -1,3 +1,5 @@
+**Note:** This codebase was generated with [Cursor](https://www.cursor.so/).
+
 # Dummy Java ISS API (Spring Boot + Nginx)
 
 This project is a Java Spring Boot application that exposes a simple API:

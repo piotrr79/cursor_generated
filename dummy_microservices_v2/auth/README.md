@@ -1,3 +1,5 @@
+**Note:** This codebase was generated with [Cursor](https://www.cursor.so/).
+
 # Auth Service (Django)
 
 ## Overview

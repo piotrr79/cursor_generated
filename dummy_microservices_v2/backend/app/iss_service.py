@@ -1,6 +1,7 @@
 import requests
 import logging
 from typing import Dict
+from app.constants import ISS_API_URL, NOMINATIM_URL, USER_AGENT
 
 logger = logging.getLogger("iss_service")
 
@@ -8,17 +9,14 @@ class ISSService:
     """
     Service for fetching ISS position and resolving country or sea/ocean.
     """
-    ISS_API_URL = "http://api.open-notify.org/iss-now.json"
-    NOMINATIM_URL = "https://nominatim.openstreetmap.org/reverse"
-    USER_AGENT = {"User-Agent": "iss-fastapi-app"}
 
     def get_iss_position(self) -> Dict[str, str]:
         """
         Fetch the current ISS position (latitude, longitude).
         Logs the API call and result.
         """
-        logger.info("Fetching ISS position from %s", self.ISS_API_URL)
-        response = requests.get(self.ISS_API_URL, timeout=5)
+        logger.info("Fetching ISS position from %s", ISS_API_URL)
+        response = requests.get(ISS_API_URL, timeout=5)
         response.raise_for_status()
         iss_data = response.json()
         lat = iss_data["iss_position"]["latitude"]
@@ -40,7 +38,7 @@ class ISSService:
         }
         try:
             logger.info("Resolving location for lat=%s, lon=%s", lat, lon)
-            response = requests.get(self.NOMINATIM_URL, headers=self.USER_AGENT, params=params, timeout=5)
+            response = requests.get(NOMINATIM_URL, headers=USER_AGENT, params=params, timeout=5)
             response.raise_for_status()
             data = response.json()
             address = data.get("address", {})

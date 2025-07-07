@@ -1,3 +1,5 @@
+**Note:** This codebase was generated with [Cursor](https://www.cursor.so/).
+
 # Dummy Apex ISS API
 
 This project provides a simple Salesforce Apex REST API:

@@ -1,3 +1,5 @@
+**Note:** This codebase was generated with [Cursor](https://www.cursor.so/).
+
 # Dummy FastAPI App
 
 This is a simple FastAPI app with a Hello World endpoint.

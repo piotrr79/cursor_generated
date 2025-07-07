@@ -1,3 +1,5 @@
+**Note:** This codebase was generated with [Cursor](https://www.cursor.so/).
+
 # dummy_microservices_v2
 
 ## Overview
@@ -37,6 +39,27 @@ style C fill:#bbf,stroke:#333,stroke-width:2px
 - **Auth**: Django service for registration, login, and JWT issuance/validation.
 - **All services**: Communicate via REST APIs and are containerized with Docker and Nginx.
 
+## Running the Application with Docker Compose
+
+To run the entire stack (frontend, backend, and auth) using Docker Compose:
+
+1. **Navigate to the project directory:**
+   ```bash
+   cd dummy_microservices_v2
+   ```
+2. **Build and start all services:**
+   ```bash
+   docker compose up --build
+   ```
+   (or use `docker-compose up --build` if your Docker version uses the old command)
+
+3. **Access the services:**
+   - Frontend: [http://localhost:3000](http://localhost:3000)
+   - Backend: [http://localhost:8000](http://localhost:8000)
+   - Auth: [http://localhost:8001](http://localhost:8001)
+
+All services are networked together and ready for development or demo use.
+
 ## Services
 
 ### 1. Frontend (`frontend/`)
@@ -60,29 +83,6 @@ style C fill:#bbf,stroke:#333,stroke-width:2px
 - SQLite database
 - Unit tests
 - Dockerfile and Nginx config for production
-
-## Running the Application
-
-### Prerequisites
-- Docker and Docker Compose installed
-
-### Quick Start
-
-1. **Clone the repository**
-2. **Build and run all services** (example with Docker Compose):
-   ```bash
-   docker-compose up --build
-   ```
-3. **Access the app**
-   - Frontend: [http://localhost](http://localhost)
-   - Backend API: [http://localhost/api/backend/iss](http://localhost/api/backend/iss)
-   - Auth API: [http://localhost/api/auth/]
-
-### Service Endpoints
-
-- **Frontend**: `/` (React app)
-- **Backend**: `/api/backend/iss` (GET, JWT required)
-- **Auth**: `/api/auth/register/`, `/api/auth/login/`, `/api/auth/token/verify/`
 
 ## Development
 

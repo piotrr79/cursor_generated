@@ -48,3 +48,7 @@ For architecture, prompts, and technical details, see the `dummy_microservices/d
 - **Type hints** - Missing type hints in Python code, even thus it was defined as requirement in /docs
 - **Docs** - Missing Docs in Python code, even thus it was defined as requirement in /docs
 - **Ignored files** - For fronted attached template file was ingored, React app was created without css styles and core html. Attached template was considered as final React template (not example) and was not attached to fronted app. Public folder is missing.
+
+# Complex code generation issues based on `dummy_microservice_v2_`:
+- **Missing files** - Dockerfiles for backend and auth apps are referring to requirements.txt files, but they were not created during code generation
+- **General** - Docker compose do not start fully functional app, generated code must be debuged and fixed by developer, although apps initialised separately seems to be fine

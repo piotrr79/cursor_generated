@@ -1,3 +1,5 @@
+**Note:** This codebase was generated with [Cursor](https://www.cursor.so/).
+
 # Dummy Symfony ISS API
 
 This Symfony application exposes an API endpoint to get the current position of the International Space Station (ISS), including the country or sea/ocean it is currently over.
