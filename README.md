@@ -51,4 +51,7 @@ For architecture, prompts, and technical details, see the `dummy_microservices/d
 
 # Complex code generation issues based on `dummy_microservice_v2_`:
 - **Missing files** - Dockerfiles for backend and auth apps are referring to requirements.txt files, but they were not created during code generation
-- **General** - Docker compose do not start fully functional app, generated code must be debuged and fixed by developer, although apps initialised separately seems to be fine
+- **Broken Docker/Nginx** - Docker files and Nginx vhosts for backend and frontend apps are not working, requires debugging and fixing
+- **Microservices bindings** - Not correctly set up, Nginx for frontend app is linked with non existing proxy_pass for backend app `http://backend:80/` and for auth app `http://auth:80/`. It was not specified in /docs, AI is halucinating.
+- **Security issue in auth** - Auth server is missing critical feature Allowed URL / Redirect URI (it was not specified in /docs)
+- **Docker compose** - Docker compose do not start fully functional app, generated code must be debuged and fixed by developer, although apps initialised separately seems to be fine

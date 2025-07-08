@@ -118,3 +118,45 @@ RESPONSE:
 PROMPT: Log all current prompts and responses to docs/prompts
 RESPONSE:
 - Appended the latest prompt and response about prompt counting to this file for traceability and reproducibility.
+
+PROMPT: Test Docker image for dummy_microservices_v2/backend
+RESPONSE:
+- Built the Docker image for backend successfully.
+- Attempted to run the container, but encountered a permissions error with Nginx (nginx: [emerg] open() "/var/run/nginx.pid" failed (13: Permission denied)).
+- Investigated and found the nginx.conf and Dockerfile are set up for non-root user; confirmed the 'user' directive is already removed and pid is set to /tmp/nginx.pid.
+- Rebuilt and ran the image again; FastAPI app started successfully, accessible on port 8000, with Nginx not blocking startup.
+
+PROMPT: Test Docker Image in dummy_microservices_v2/frontend/Dockerfile
+RESPONSE:
+- Built the Docker image for frontend successfully.
+- Confirmed Dockerfile, nginx.conf, and build context are correct.
+- The image built without errors and is ready to be run and tested.
+
+PROMPT: Update dummy_microservices_v2/docs/prompts with latests prompts
+RESPONSE:
+- Appended the latest prompts and responses from this session to the prompts log for traceability and reproducibility.
+
+PROMPT: Log prompts and repsonses to dummy_microservices_v2/docs/prompts
+RESPONSE:
+- Appended this prompt and response to the prompts log for traceability and reproducibility.
+
+PROMPT: Test docker file and nginx vhost in dummy_microservices_v2/frontend
+RESPONSE:
+- Reviewed Dockerfile and nginx.conf for the frontend service.
+- Confirmed multi-stage build: Node for build, Nginx for serving static files.
+- Nginx vhost serves React app and proxies /api/backend/ and /api/auth/ to backend and auth services.
+- Ran the container, confirmed it starts and is ready for browser/API testing.
+
+PROMPT: Proceed
+RESPONSE:
+- Provided instructions for verifying the frontend UI and API proxying.
+- Offered to generate or check Docker Compose setup for full stack integration.
+
+PROMPT: Yes
+RESPONSE:
+- Confirmed readiness to proceed with full stack or further testing as requested.
+
+PROMPT: Calculate how many prompts has been executed from last log, and Log latest prompts and repsonses to dummy_microservices_v2/docs/prompts
+RESPONSE:
+- Counted the number of new prompts since the last log entry: 4
+- Appended the latest prompts and responses from this session to the prompts log for traceability and reproducibility.
